@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/moduls/aside.css">
+    <link rel="stylesheet" href="style/moduls/topbar.css">
+</head>
+
+<body id="app">
+    <aside id="aside">
+
+    </aside>
+
+    <main id="main">
+        <header id="topBar" style="-webkit-app-region: drag">
+            <ul class="nav">
+                <li class="nav__item"> <img class="nav__icon" src="assets/icon-folder.png" /> <span class="nav__label">Folders</span></li>
+                <li class="nav__item"> <img class="nav__icon" src="assets/Icon%20feather-tag.png" /> <span class="nav__label">Tags</span></li>
+                <li class="nav__item"> <img class="nav__icon" src="assets/Icon%20feather-bookmark.png" /> <span class="nav__label">Bookmarks</span> </li>
+                <li onclick="toggleDeveloper()" class="nav__item"> <img class="nav__icon" src="assets/Icon%20feather-code.png" /> <span class="nav__label">Developer</span> </li>
+
+            </ul>
+            <div class="search">
+                <input type="text" required placeholder="search" class="search__txt" id="searchBox">
+                <img class="search__icon" src="assets/icon-search.png">
+            </div>
+
+
+
+
+            <div id="window-controls">
+
+                <div class="button" id="min-button">
+                    <img class="icon" srcset="assets/min-w.png , assets/min-w@2x.png" draggable="false" />
+                </div>
+
+                <div class="button" id="max-button">
+                    <img class="icon" srcset="assets/max-w.png , assets/max-w@2x.png" draggable="false" />
+                </div>
+
+                <div class="button" id="restore-button">
+                    <img class="icon" srcset="assets/restore-w.png , assets/restore-w@2x.png" draggable="false" />
+                </div>
+
+                <div class="button" id="close-button">
+                    <img class="icon" srcset="assets/close-w.png , assets/close-w@2x.png" draggable="false" />
+                </div>
+
+            </div>
+
+
+
+        </header>
+        <div id="root">
+
+            <div class="grid" id="itemsList"> </div>
+
+        </div>
+    </main>
+</body>
+<script src="renderer.js"></script>
+
+
+</html>

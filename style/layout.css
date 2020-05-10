@@ -1,0 +1,50 @@
+
+#app {
+    display: flex;
+    flex-direction: row;
+    width: calc(100vw - 2px) ;
+    height: 100vh;
+
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+
+    background-color: #000000d5;
+    border: 1px solid wheat;
+}
+
+#aside {
+    opacity: .8;
+    color: #fff;
+    /* padding: 0 20px; */
+    width: 250px;
+    flex-shrink: 0;
+    background-color: rgb(60, 60, 60);
+    
+    background-image: url(../assets/seamlessBlack.png);
+    /* background-color: rgb(15, 172, 75); */
+}
+
+#main {
+    display: flex ;
+    flex-direction: column;
+    height: 100% ;
+    overflow: auto ;
+    background-image: url(../assets/seamlessBlack.png);
+    background-color: #242424;
+}
+
+#topBar {
+    color: #fff;
+    display: flex ;
+    flex-direction: row ;
+    justify-content: space-between ;
+
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+#root {
+    overflow-y: auto;
+    padding: 20px ;
+}

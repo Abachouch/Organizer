@@ -1,0 +1,42 @@
+.app__header{
+    margin: 20px;
+    height: 100px;
+}
+/* styling root aside__list */
+#aside>.aside__list{
+    height: calc( 100vh - 142px);
+    overflow-x: auto;
+    padding: 0 20px 20px;
+}
+
+.aside__list{
+    /* margin-top: 100px; */
+}
+
+.aside__list li{
+    transition: opacity 200ms ease;
+    cursor: pointer;
+    color: #fff;
+    opacity: .5;
+    margin-top: .4rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.aside__list li:hover{
+    opacity: 1;
+}
+.aside__list li ul{
+    padding-left: 1rem ;
+}
+.aside__list img{
+    margin-right: 20px;
+    height: .75rem;
+}
+.aside__list span{
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 500;
+    width: 50px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
