@@ -1,12 +1,13 @@
 const {
     ipcRenderer,
-    dialog
+    
 } = require('electron');
 
 
 window.$ = window.jQuery = require('jquery');
 
 const remote = require('electron').remote;
+const {dialog} = require('electron').remote;
 
 const fs = require('fs');
 const path = require('path');
@@ -25,8 +26,45 @@ const aside = document.getElementById('aside');
 const asideContent = document.getElementById('asideContent') ;
 
 const rootPath = path.join('D:' , 'Pictures' ) ;
-const win = remote.getCurrentWindow(); /* Note this is different to the
-html global `window` variable */
+const win = remote.getCurrentWindow();
+
+
+const dirTree = require("directory-tree");
+
+
+function addFolder(){
+    dialog.showOpenDialog(win, {
+        properties: ['openFile', 'openDirectory']
+      }).then(result => {
+        if( ! result.canceled){
+            dbFolder.addFolder({url : result.filePaths[0]} , function(err , doc){
+                const tree = dirTree(doc.url , { extensions: /\.brr/ });
+                appendFolder(tree) ;
+            }) ;
+        }
+      }).catch(err => {
+        console.log(err)
+      })
+}
+
+
+$(document).ready(function(){
+    //
+    $('#aside').load('./views/aside/aside.htm' , function (){
+        // after doc is loaded
+        dbFolder.getFolders(function(err , doc) {
+            doc.forEach(f => {
+                const tree = dirTree(f.url , { extensions: /\.brr/ });
+                appendFolder(tree) ;
+                console.log(tree) ;
+            })
+             
+            //     initAside(tree) ;
+        }) ;
+    }) ;
+    
+})
+
 
 function actNavNewFolder() {
     
@@ -218,12 +256,4 @@ var _folders = [{ label: 'folder 1' },
 ];
 
 
-$(document).ready(function(){
-    $('#aside').load('./views/aside.htm' , function (){
-        // after doc is loaded
-        initAside(_folders) ;
-    }) ;
-
-    
-})
 
