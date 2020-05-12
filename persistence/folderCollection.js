@@ -2,12 +2,13 @@ const Datastore = require('nedb');
 const electron = require('electron').remote ;
 const path = require('path') ;
 
-db = {} ;
-db.folder = new Datastore(path.join(   electron.app.getPath("appData"),  'organizer' , 'nedb' ,  'folderCollection' ) ) ;
+dbfolder = {} ;
+dbfolder = new Datastore(path.join(   electron.app.getPath("appData"),  'organizer' , 'nedb' ,  'folderCollection' ) ) ;
 
 exports.addFolder = function(dir , calback){
-    db.folder.loadDatabase() ;
-    db.folder.insert( dir , function(err ,doc){
+    console.log(dir) ;
+    dbfolder.loadDatabase() ;
+    dbfolder.insert( dir , function(err ,doc){
         calback(err ,doc) ;
     })
 }
@@ -15,8 +16,9 @@ exports.addFolder = function(dir , calback){
 
 exports.getFolders = function(calback){
 
-    db.folder.loadDatabase() ;
-    db.folder.find( {} , function(err , doc) {
+    dbfolder.loadDatabase() ;
+    dbfolder.find( {} , function(err , doc) {
+        console.log(doc) ;
         calback(err ,doc) ;
     })
 }

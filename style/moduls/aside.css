@@ -1,6 +1,21 @@
 .app__header{
     margin: 20px;
     height: 100px;
+    user-select: none;
+}
+.aside_open-folder{
+    border: none;
+    color: white;
+    font-size: .8rem;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: block;
+    margin: 0 auto 1.2rem;
+    padding: 10px 40px;
+
+}
+.aside_open-folder:hover{
+    background-color: rgba(255, 255, 255, 0.2);
 }
 /* styling root aside__list */
 #aside>.aside__list{
@@ -8,6 +23,19 @@
     overflow-x: auto;
     padding: 0 20px 20px;
 }
+
+
+#asideList ul{
+    display: none;
+    
+}
+
+#asideList li.is-expand>ul {
+    display: block;
+    
+}
+
+
 
 .aside__list{
     /* margin-top: 100px; */
@@ -17,22 +45,32 @@
     transition: opacity 200ms ease;
     cursor: pointer;
     color: #fff;
-    opacity: .5;
+    
     margin-top: .4rem;
     overflow: hidden;
     white-space: nowrap;
 }
-.aside__list li:hover{
+
+.aside__list li span , .aside__list li img{
+    opacity: .5;
+}
+.aside__list li:hover >span , .aside__list li:hover >img{
     opacity: 1;
 }
+
+
 .aside__list li ul{
     padding-left: 1rem ;
 }
 .aside__list img{
     margin-right: 20px;
     height: .75rem;
+    user-select: none;
+    pointer-events:none ;
 }
 .aside__list span{
+    pointer-events:none ;
+    user-select: none;
     display: inline-block;
     font-size: .75rem;
     font-weight: 500;

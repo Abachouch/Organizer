@@ -9,8 +9,8 @@ function createWindow () {
   win = new BrowserWindow({
     width: 800,
     height: 600,
-    frame  : false ,
-    transparent: true,
+    //frame  : false ,
+    //transparent: true,
     webPreferences: {
       nodeIntegration: true
     }
@@ -20,7 +20,7 @@ function createWindow () {
 
   // Open the DevTools.
   win.webContents.openDevTools() ;
-    win.setAlwaysOnTop(true, 'screen') ;
+   // win.setAlwaysOnTop(true, 'screen') ;
   
   
 }
