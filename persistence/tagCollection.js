@@ -17,7 +17,7 @@ exports.insertTag = function (tag, callback) {
     });
 }
 
-exports.getAll = function (callback) {
+exports.getTags = function (callback) {
     db.tag.loadDatabase() ;
     db.tag.find({} , function(err , doc) {
         callback(err , doc) ;

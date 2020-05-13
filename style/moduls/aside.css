@@ -1,3 +1,7 @@
+
+#asideContent{
+    padding: 0 20px ;
+}
 .app__header{
     margin: 20px;
     height: 100px;
@@ -18,19 +22,19 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 /* styling root aside__list */
-#aside>.aside__list{
-    height: calc( 100vh - 142px);
+#asideContent>.aside__list{
+    height: calc( 100vh - 200px);
     overflow-x: auto;
     padding: 0 20px 20px;
 }
 
 
-#asideList ul{
+#asideFoldersList ul{
     display: none;
     
 }
 
-#asideList li.is-expand>ul {
+#asideFoldersList li.is-expand>ul {
     display: block;
     
 }
