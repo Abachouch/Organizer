@@ -1,5 +1,6 @@
-let _tagList = document.getElementById('asideTagList');
+
 function appendTag(tag){
+    let _tagList = document.getElementById('asideTagList');
     console.table(tag) ;
     _tagList.appendChild(li_AsideTag(tag));
 }

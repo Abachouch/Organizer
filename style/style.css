@@ -6,12 +6,20 @@
 
 .item--img {
     background-color: #eee;
-
     margin: 0 0 1em;
     width: 100%;
 }
 
-.item--img.zip {
+.item--folder {
+    display: block;
+    background-color: rgb(235, 166, 77);
+    margin: 0 0 1em;
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+illustartions .item--img.zip {
     /* background-color: rgb(243, 112, 112);
     text-align: center; */
 }

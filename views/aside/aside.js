@@ -1,31 +1,36 @@
-
-function showAsideFoldersSection(){
-    $('#asideContent').load('./views/aside/folders/folders.htm' , function (){
+function showAsideFoldersSection() {
+    $('#asideContent').load('./views/aside/folders/folders.htm', function () {
         // after document is loaded
-        dbFolder.getFolders(function(err , doc) {
+        dbFolder.getFolders(function (err, doc) {
 
+            // doc.forEach(f => {
+            //     const tree = dirTree(f.url, {
+            //         extensions: /\.brr/
+            //     });
+            //     appendFolder(tree);
+            // })
             doc.forEach(f => {
-                const tree = dirTree(f.url , { extensions: /\.brr/ });
-                appendFolder(tree) ;
+
+                appendFolder(f);
             })
-            
-        }) ;
-    }) ;
+
+        });
+    });
 }
 
-function showAsideTagsFoldersSection(){
-    $('#asideContent').load('./views/aside/tags/tags.htm' , function (){
+function showAsideTagsSection() {
+    $('#asideContent').load('./views/aside/tags/tags.htm', function () {
         // after document is loaded
-        dbTag.getTags(function(err , doc) {
+        dbTag.getTags(function (err, doc) {
 
             doc.forEach(f => {
-                appendTag(f) ;
+                appendTag(f);
             })
-             
-        }) ;
-    }) ;
+
+        });
+    });
 }
 
-
-
-
+function showAsideBookmarksSection() {
+    console.log("showAsideBookmarksSection");
+}

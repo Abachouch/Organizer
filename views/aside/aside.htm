@@ -1,10 +1,38 @@
-<h1 class="app__header"  style="-webkit-app-region: drag">Organizer</h1>
+<h1 class="app__header" style="-webkit-app-region: drag">Organizer</h1>
+<ul id="aside__nav">
 
+    <li onclick="showAsideFoldersSection()" class="nav__item">
+
+        <svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.8 18">
+            <path data-name="Icon feather-folder"
+                d="M18.8 15.2A1.8 1.8 0 0117 17H2.8A1.8 1.8 0 011 15.2V2.8A1.8 1.8 0 012.8 1h4.4L9 3.7h8a1.8 1.8 0 011.8 1.7z"
+                fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></svg>
+        <span class="nav__label">Folders</span>
+    </li>
+
+    <li onclick="showAsideTagsSection()" class="nav__item">
+        <svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.2 18">
+            <g data-name="Icon feather-tag" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2">
+                <path data-name="Path 6"
+                    d="M16.5 10.5l-6 6a1.7 1.7 0 01-2.3 0L1 9.3V1h8.3l7.2 7.2a1.7 1.7 0 010 2.3z" />
+                <path data-name="Path 7" d="M5.2 5.2h0" />
+            </g>
+        </svg>
+        <span class="nav__label">Tags</span>
+    </li>
+
+    <li onclick="showAsideBookmarksSection()" class="nav__item is-selected">
+        <svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.4 18">
+            <path data-name="Icon feather-bookmark"
+                d="M13.4 17l-6.2-4.4L1 17V2.8A1.8 1.8 0 012.8 1h8.9a1.8 1.8 0 011.7 1.8z" fill="none" stroke="#fff"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></svg>
+
+        <span class="nav__label">Bookmarks</span>
+    </li>
+
+</ul>
 <div id="asideContent">
-
-
 </div>
-
-
 
 <script src="./views/aside/aside.js"></script>
