@@ -18,6 +18,10 @@ window.$ = window.jQuery = require('jquery');
 const fs = require('fs');
 const path = require('path');
 
+
+//utilities
+const ui = require('./utilis/utils.js');
+
 //Database Connection
 const dbTag = require('./persistence/tagCollection.js');
 const dbFolder = require('./persistence/folderCollection.js');
@@ -26,27 +30,38 @@ const dbFolder = require('./persistence/folderCollection.js');
 const aside = document.getElementById('aside');
 const asideContent = document.getElementById('asideContent');
 
+// Views Object
+const {
+    contentSection
+} = require('./views/content/content.js');
+
+const {
+    asideSection
+} = require('./views/aside/aside.js');
+
+const {
+    contentFolder
+} = require('./views/content/folder/contentFolder.js');
 
 
-
-function addFolder() {
-    dialog.showOpenDialog(win, {
-        properties: ['openFile', 'openDirectory']
-    }).then(result => {
-        if (!result.canceled) {
-            dbFolder.addFolder({
-                url: result.filePaths[0]
-            }, function (err, doc) {
-                const tree = dirTree(doc.url, {
-                    extensions: /\.brr/
-                });
-                appendFolder(tree);
-            });
-        }
-    }).catch(err => {
-        console.log(err)
-    })
-}
+// function addFolder() {
+//     dialog.showOpenDialog(win, {
+//         properties: ['openFile', 'openDirectory']
+//     }).then(result => {
+//         if (!result.canceled) {
+//             dbFolder.addFolder({
+//                 url: result.filePaths[0]
+//             }, function (err, doc) {
+//                 const tree = dirTree(doc.url, {
+//                     extensions: /\.brr/
+//                 });
+//                 appendFolder(tree);
+//             });
+//         }
+//     }).catch(err => {
+//         console.log(err)
+//     })
+// }
 
 
 $(document).ready(function () {
@@ -54,7 +69,7 @@ $(document).ready(function () {
     $('#aside').load('./views/aside/aside.htm', function () {
         // after doc is loaded
         dbFolder.getFolders(function (err, doc) {
-            showAsideFoldersSection();
+            asideSection.showAsideFoldersSection();
             //showAsideTagsSection();
         });
     });

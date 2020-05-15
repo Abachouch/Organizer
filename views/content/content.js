@@ -1,39 +1,30 @@
- function showItemsInFolder() {
-     let items = document.getElementById('itemsList');
-     items.innerHTML = "";
-     console.log(`show items : ${appState.folder}`);
+exports.contentSection = {
 
-     if (appState.folder) {
+    init() {
+        // show Content OF foldr After clicking on Nav
+        // TODO switch between tag | folder | tag clicked
+        showContentInFolder();
+    },
 
-         const tree = dirTree(appState.folder);
-         tree.children.forEach(file => {
-             appendItem(file);
+}
+// const fs = require('fs') ;
 
-         });
-     }
- }
+// exports.getSystemDirs = function(url) {
+//     let data = fs.readdirSync(url)
+//     .map(file => path.join(url, file))
+//     .filter(path => fs.statSync(path).isDirectory());
 
+//     return data ;
+// }
 
- function appendItem(item) {
-     let items = document.getElementById('itemsList');
-     items.appendChild(itemElement(item));
+// exports.getSystemFiles =function(url){
+//     let data = fs.readdirSync(url)
+//     .map(file => path.join(url, file))
+//     .filter(path => !(fs.statSync(path).isDirectory()));
 
-     console.log(`append this file ${item}`);
- }
+//     return data;
+// }
 
- function itemElement(item) {
-
-     console.log(item);
-     if (['.jpeg', '.png', '.gif', '.svg', '.jpg', '.webp', '.tiff', '.raw', '.bmp', '.heif', '.indd'].includes(item.extension)) {
-         let img = document.createElement('IMG');
-         img.classList.add('item--img');
-         img.src = item.path;
-         return img;
-     } else {
-         let span = document.createElement('SPAN');
-         span.classList.add('item--folder');
-         span.innerHTML = item.name;
-         return span;
-     }
-
- }
+// function resolveDirName(str) {
+//     return str.split('\\').pop();
+// }

@@ -1,7 +1,7 @@
 <h1 class="app__header" style="-webkit-app-region: drag">Organizer</h1>
 <ul id="aside__nav">
 
-    <li onclick="showAsideFoldersSection()" class="nav__item">
+    <li onclick="asideSection.showAsideFoldersSection()" class="nav__item">
 
         <svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.8 18">
             <path data-name="Icon feather-folder"
@@ -10,7 +10,7 @@
         <span class="nav__label">Folders</span>
     </li>
 
-    <li onclick="showAsideTagsSection()" class="nav__item">
+    <li onclick="asideSection.showAsideTagsSection()" class="nav__item">
         <svg class="nav__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.2 18">
             <g data-name="Icon feather-tag" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"
                 stroke-width="2">
@@ -32,7 +32,5 @@
     </li>
 
 </ul>
-<div id="asideContent">
+<div id="asideContent">()
 </div>
-
-<script src="./views/aside/aside.js"></script>

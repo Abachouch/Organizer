@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/moduls/aside.css">
     <link rel="stylesheet" href="style/moduls/topbar.css">
+    <link rel="stylesheet" href="style/moduls/contentFolder.css">
 </head>
 
 <body id="app">
@@ -22,6 +23,7 @@
     <main id="main">
 
         <header id="topBar" style="-webkit-app-region: drag">
+
             <ul class="nav">
                 <li class="nav__item"> <img class="nav__icon" src="assets/icon-folder.png" /> <span
                         class="nav__label">Folders</span></li>
@@ -32,11 +34,11 @@
                 <li onclick="toggleDeveloper()" class="nav__item"> <img class="nav__icon" src="assets/Icon-code.png" />
                     <span class="nav__label">Developer</span> </li>
             </ul>
+
             <div class="search">
                 <input type="text" required placeholder="search" class="search__txt" id="searchBox">
                 <img class="search__icon" src="assets/icon-search.png">
             </div>
-
 
             <div id="window-controls">
 
@@ -59,19 +61,15 @@
             </div>
 
         </header>
+
         <div id="root">
-
-            <div class="grid" id="itemsList"> </div>
-
+            <div id="content"> </div>
         </div>
-    </main>
 
+    </main>
 
 </body>
 
-<script src="./views/content/content.js"></script>
 <script src="renderer.js"></script>
-
-
 
 </html>

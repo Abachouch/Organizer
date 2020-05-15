@@ -1,13 +1,30 @@
-.grid {
+.grid {}
+
+.content__items-list {
     column-count: 4;
     column-gap: 1em;
     width: 100%;
+}
+
+@keyframes show {
+    from {
+        opacity: 0.1;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .item--img {
     background-color: #eee;
     margin: 0 0 1em;
     width: 100%;
+    opacity: 1;
+    animation-name: show;
+    animation-delay: 1s;
+    /* animation-duration: 200ms; */
+    animation-timing-function: ease-in;
 }
 
 .item--folder {

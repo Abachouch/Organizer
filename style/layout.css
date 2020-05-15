@@ -1,8 +1,7 @@
-
 #app {
     display: flex;
     flex-direction: row;
-    width: calc(100vw - 2px) ;
+    width: calc(100vw - 2px);
     height: 100vh;
 
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
@@ -20,25 +19,26 @@
     width: 250px;
     flex-shrink: 0;
     background-color: rgb(60, 60, 60);
-    
+
     background-image: url(../assets/seamlessBlack.png);
     /* background-color: rgb(15, 172, 75); */
 }
 
 #main {
-    display: flex ;
+    display: flex;
     flex-direction: column;
-    height: 100% ;
-    overflow: auto ;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
     background-image: url(../assets/seamlessBlack.png);
     background-color: #242424;
 }
 
 #topBar {
     color: #fff;
-    display: flex ;
-    flex-direction: row ;
-    justify-content: space-between ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
     -webkit-user-select: none;
     -webkit-app-region: drag;
@@ -46,5 +46,5 @@
 
 #root {
     overflow-y: auto;
-    padding: 20px ;
+    padding: 20px;
 }
