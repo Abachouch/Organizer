@@ -16,6 +16,7 @@ exports.contentFolder = {
 
         // add navigation anchor
         this.navigation = document.createElement('UL');
+        this.navigation.className = 'content__navigation';
         this.contentFolderElement.append(this.navigation);
 
         this.listFolders = document.createElement('DIV');
@@ -46,7 +47,7 @@ exports.contentFolder = {
         this.navigation.innerHTML = '';
         appState.pathHistory.forEach((u, $index) => {
             let li = document.createElement('LI');
-            li.className = 'content__navigation-item';
+
             li.innerHTML = u.split('\\').pop();
             li.dataset.id = $index;
             li.addEventListener("click", function (event) {

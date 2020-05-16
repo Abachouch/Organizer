@@ -11,6 +11,29 @@
     padding: 10px 0 20px;
 }
 
+.content__navigation {
+    color: teal;
+    font-size: .9rem;
+    position: sticky;
+    top: 0;
+}
+
+.content__navigation li {
+    display: inline-block;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.content__navigation li:hover {
+    text-decoration: underline;
+}
+
+.content__navigation li::after {
+    content: '>';
+    padding-left: 5px;
+    display: inline-block;
+}
+
 .content__folder__title {
     margin: 0;
     font-size: .9rem;

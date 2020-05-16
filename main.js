@@ -1,28 +1,32 @@
-const { app, BrowserWindow , ipcMain} = require('electron')
+const {
+  app,
+  BrowserWindow,
+  ipcMain
+} = require('electron')
 
 
-let win ;
+let win;
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
 
   win = new BrowserWindow({
     width: 800,
     height: 600,
-    //frame  : false ,
+    frame: false,
     //transparent: true,
     webPreferences: {
       nodeIntegration: true
     }
-  }) ;
+  });
   // and load the index.html of the app.
   win.loadFile('index.html')
 
   // Open the DevTools.
-  win.webContents.openDevTools() ;
-   // win.setAlwaysOnTop(true, 'screen') ;
-  
-  
+  win.webContents.openDevTools();
+  // win.setAlwaysOnTop(true, 'screen') ;
+
+
 }
 
 
@@ -52,6 +56,6 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.
 
 
-ipcMain.on('toggle-developer' , ($err , $event) =>{
-  win.isDevToolsOpened()  ? win.closeDevTools()  : win.openDevTools() ; 
+ipcMain.on('toggle-developer', ($err, $event) => {
+  win.isDevToolsOpened() ? win.closeDevTools() : win.openDevTools();
 });

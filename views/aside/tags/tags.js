@@ -1,7 +1,6 @@
-
-function appendTag(tag){
+function appendTag(tag) {
     let _tagList = document.getElementById('asideTagList');
-    console.table(tag) ;
+    console.table(tag);
     _tagList.appendChild(li_AsideTag(tag));
 }
 
@@ -11,7 +10,7 @@ function li_AsideTag(tag) {
     let li = document.createElement('LI');
 
     li.addEventListener("click", function (event) {
-        
+
     })
     // append image
     let img = document.createElement('IMG');
@@ -23,7 +22,5 @@ function li_AsideTag(tag) {
     li.appendChild(span);
 
     // append subFolders
-    
-
     return li;
 }
